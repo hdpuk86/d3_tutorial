@@ -33,8 +33,15 @@ text {
   font: 10px sans-serif;
 }
 
-/* path, line {
-  fill: none;
-  stroke: #000;
-  shape-rendering: crispEdges;
-} */
+.tooltip {
+  position: absolute;
+  text-align: right;
+  width: 140px;
+  height: 40px;
+  padding: 6px;
+  font: 12px sans-serif;
+  background: white;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+  pointer-events: none;
+}
