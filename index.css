@@ -23,13 +23,18 @@ html, body {
   fill: darkorange;
 }
 
-.axis text {
+.graph-title {
+  fill: #000;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+text {
   font: 10px sans-serif;
 }
 
-.axis path,
-.axis line {
+/* path, line {
   fill: none;
   stroke: #000;
   shape-rendering: crispEdges;
-}
+} */
