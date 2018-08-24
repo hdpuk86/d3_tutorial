@@ -15,7 +15,7 @@ var width = 960 - margin.left - margin.right
 var height = 500 - margin.top - margin.bottom
 
 var barPadding = 5
-var barWidth = (height / dataset.length)
+var barHeight = (height / dataset.length)
 
 var xScale = d3.scaleLinear()
   .domain([minValue, maxValue])
@@ -39,13 +39,12 @@ var svg = d3.select('#averages_bar_chart')
 
 svg.selectAll('.bar')
     .data(dataset)
-    .enter()
-    .append('rect')
+    .enter().append('rect')
     .attr('class', function (d) { return 'bar bar--' + (d.value < 0 ? 'negative' : 'positive') })
     .attr('x', function (d) { return xScale(Math.min(0, d.value)) })
-    .attr('y', function (d, i) { return height - i * barWidth })
+    .attr('y', function (d, i) { return 0 + (i * barHeight) })
     .attr('width', function (d) { return Math.abs(xScale(d.value) - xScale(0)) })
-    .attr('height', height)
+    .attr('height', barHeight - barPadding)
 
 svg.append('g')
   .attr('class', 'x axis')
